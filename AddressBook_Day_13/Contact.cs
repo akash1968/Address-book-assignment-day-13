@@ -31,35 +31,35 @@ namespace AddressBook_Day_13
             this.email = email;
         }
         //getters and setters for the data entered by the user
-        public String GetName()
+        public string GetName()
         {
             return name;
         }
-        public String GetAddress()
+        public string GetAddress()
         {
             return address;
         }
-        public String GetCity()
+        public string GetCity()
         {
             return city;
         }
-        public String GetState()
+        public string GetState()
         {
             return state;
         }
-        public String GetZip()
+        public string GetZip()
         {
             return zip;
         }
-        public String GetPhoneNo()
+        public string GetPhoneNo()
         {
             return phoneNo;
         }
-        public void SetPhoneNo(String phoneNo)
+        public void SetPhoneNo(string phoneNo)
         {
             this.phoneNo = phoneNo;
         }
-        public String GetEmail()
+        public string GetEmail()
         {
             return email;
         }
