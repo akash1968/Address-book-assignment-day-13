@@ -19,6 +19,9 @@ namespace AddressBook_Day_13
         private string zip;
         private string phoneNo;
         private string email;
+
+       
+
         //creating a constructor
         public Contact(string name, string address, string city, string state, string zip, string phoneNo, string email)
         {
@@ -63,5 +66,6 @@ namespace AddressBook_Day_13
         {
             return email;
         }
+        public bool Count { get; internal set; }
     }
 }

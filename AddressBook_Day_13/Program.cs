@@ -32,7 +32,9 @@ namespace AddressBook_Day_13
                 Console.WriteLine("6.Search person by city/state name.");
                 Console.WriteLine("7.View persons by city.");
                 Console.WriteLine("8.View persons by state");
-                Console.WriteLine("9.Exit.");
+                Console.WriteLine("9.To get count of contacts present in a city");
+                Console.WriteLine("10.To get count of contacts present in a state");
+                Console.WriteLine("11.Exit.");
                 choice = Convert.ToInt32(Console.ReadLine());
                 //Checking the choice entered by the user and iterating using for loop
                 if (choice == 1)
@@ -231,18 +233,27 @@ namespace AddressBook_Day_13
                 else if (choice == 7)
                 {
                     ab.AddressByCity();
-
                 }
                 else if (choice == 8)
                 {
                     ab.AddressByState();
+                }
+                //UC10-Count by city name
+                else if (choice == 9)
+                {
+                    ab.GetCountByCity();
+                }
+                //UC10-Count by state name
+                else if (choice == 10)
+                {
+                    ab.GetCountByState();
                 }
                 else
                 {
                     break;
                 }
                 //exit
-            } while (choice != 9);
+            } while (choice != 11);
         }
     }
 }
