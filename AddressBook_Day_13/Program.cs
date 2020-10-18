@@ -29,7 +29,8 @@ namespace AddressBook_Day_13
                 Console.WriteLine("3.Edit existing contacts.");
                 Console.WriteLine("4.Remove a contact.");
                 Console.WriteLine("5.View AddressBook fora key name.");
-                Console.WriteLine("6.Exit.");
+                Console.WriteLine("6.Search person by city/state name.");
+                Console.WriteLine("7.Exit.");
                 choice = Convert.ToInt32(Console.ReadLine());
                 //Checking the choice entered by the user and iterating using for loop
                 if (choice == 1)
@@ -79,7 +80,7 @@ namespace AddressBook_Day_13
                         Console.WriteLine("Enter a valid city name : ");
                         city = Console.ReadLine();
                     }
-                    //asking to enter state of the user
+                    //asking to enter state name of the user
                     Console.WriteLine("Enter your state : ");
                     string state = Console.ReadLine();
                     //regex to check the correct state name
@@ -202,12 +203,30 @@ namespace AddressBook_Day_13
                         Console.WriteLine("Email ID : " + cc.GetEmail());
                     }
                 }
+                else if (choice == 6)
+                {
+                    Console.WriteLine("Enter the name of the city/state : ");
+                    string location = Console.ReadLine();
+                    List<Contact> li = ab.UC8_SearchPeopleByCityOrState(location);
+                    if (li.Count != 0)
+                    {
+                        Console.WriteLine("There are " + li.Count + " contacts with location " + location);
+                        foreach (Contact cc in li)
+                        {
+                            Console.WriteLine("Name : " + cc.GetName() + "  Address : " + cc.GetAddress() + "  ZIP : " + cc.GetZip() + "  Contact No : " + cc.GetPhoneNo() + "  EmailID : " + cc.GetEmail());
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No contact found!!!");
+                    }
+                }
                 else
                 {
                     break;
                 }
                 //exit
-            } while (choice != 6);
+            } while (choice != 7);
         }
     }
 }
